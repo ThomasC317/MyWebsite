@@ -8,7 +8,7 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
@@ -30,4 +30,54 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+} */
+.full-screen-background {
+  background-image: url('header.png');
+  background-size: cover; /* Cover the entire div */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  width: 100vw; /* Full width of the viewport */
+  height: 100%; /* Full height of the viewport */
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  opacity: 0.9;
+  height: 100%;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+.header {
+  position: fixed;
+  z-index: 9999;
+  padding: 15px 0px;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  color:white;
+}
+
+.test {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-title {
+  color:white
+}
+
+.contact-card-body {
+  width: 100%;
+  height: 100%;
+}
+
+.contact-body {
+  display: flex;
+  padding-top: 16px;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 }
