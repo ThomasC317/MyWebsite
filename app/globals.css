@@ -81,3 +81,15 @@ body {
   text-align: center;
   width: 100%;
 }
+
+.cv-site-cover {
+  background-image: url('header.png');
+  aspect-ratio: 400 / 300;
+  object-fit: cover;
+
+}
+
+a {
+  color: lightslategray;
+  text-decoration: underline;
+}

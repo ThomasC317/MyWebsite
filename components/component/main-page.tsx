@@ -35,31 +35,31 @@ export function MainPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <nav className="header">
-        <div className="container mx-auto flex flex-col items-center md:flex-row md:justify-between">
+        <div className="container mx-auto flex flex-col items-end pr-6">
             <ul className="flex space-x-4">
               <li>
-                <Link className="hover:text-gray-400" href="#">
-                  About
+                <Link className="hover:text-gray-400 text-white" href="#about">
+                  À propos
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-gray-400" href="#">
-                  Skills
+                <Link className="hover:text-gray-400 text-white" href="#skills">
+                  Compétences
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-gray-400" href="#">
-                  Experience
+                <Link className="hover:text-gray-400 text-white" href="#experiences">
+                  Expériences
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-gray-400" href="#">
-                  Projects
+                <Link className="hover:text-gray-400 text-white" href="#projects">
+                  Projets persos
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-gray-400" href="#">
-                  Contact
+                <Link className="hover:text-gray-400 text-white" href="#contact">
+                  Me contacter
                 </Link>
               </li>
             </ul>
@@ -70,70 +70,54 @@ export function MainPage() {
         <section className="test">
           <div className="full-screen-background">
         <div className="container mx-auto flex flex-col items-center md:flex-row md:justify-between  ">
-          <div className="flex flex-col items-center md:items-start">
-            <h1 className="text-3xl  main-title">Bonjour, je m'appelle Thomas CERDERA</h1>
-            <p className="text-gray-400">et je suis développeur Full Stack</p>
+          <div className="flex flex-col items-center md:items-start px-8">
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl main-title">Bonjour, je m'appelle Thomas CERDERA</h1>
+            <p className="text-white main-title mt-6">Je suis un développeur Full-Stack !</p>
           </div>
         </div>
         </div>
         </section>
-        <section className="grid grid-cols-2 gap-8 px-8 py-12 h-[500px] mx-auto">
+        <section className="grid grid-cols-2 gap-8 px-8 py-12 h-[500px] mx-auto" id="about">
         <div className="mx-auto">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">About Me</h2>
-          <p className="text-gray-600">
-            I am a passionate full stack developer with experience in building scalable and user-friendly web
-            applications. I have a strong background in both front-end and back-end technologies, and I'm always eager
-            to learn new skills and stay up-to-date with the latest industry trends.
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">A propos de moi</h2>
+          <p className="text-gray-600 mt-12">
+            Je suis un développeur Full-Stack qui travaille maintenant depuis 5 ans dans le domaine du Web. <br />
+            En dehors du développement, j'adore la musique, le cinéma, les séries, les jeux-vidéos, les voyages, et la photographie...<br /><br />
+            Comme vous pouvez le voir, je suis quelqu'un de très créatif. J'ai de plus une bonne maîtrise de l'anglais (920 au toeic), j'apprécie particulièrement 
+            le travail en équipe mais je sais aussi travailler en autonomie quand il le faut. Je suis minutieux, je sais gérer mon stress, 
+            et j'ai beaucoup travaillé mon esprit critique.<br /><br />
+            Fort de mes expériences, je saurais devenir un atout pour votre équipe.
+
           </p>
         </div>
-        {/* <div>
-          <h2 className="text-2xl font-bold mb-4">Functional Competencies</h2>
-          <ul className="grid grid-cols-2 gap-4">
-            <li className="bg-gray-100 rounded-md p-4">
-              <h3 className="text-lg font-bold">Front-end</h3>
-              <p className="text-gray-600">React, Vue.js, Angular, HTML, CSS, JavaScript, TypeScript</p>
-            </li>
-            <li className="bg-gray-100 rounded-md p-4">
-              <h3 className="text-lg font-bold">Back-end</h3>
-              <p className="text-gray-600">Node.js, Express, Ruby on Rails, PHP, Python, Django</p>
-            </li>
-            <li className="bg-gray-100 rounded-md p-4">
-              <h3 className="text-lg font-bold">Databases</h3>
-              <p className="text-gray-600">MySQL, PostgreSQL, MongoDB, Redis, SQLite</p>
-            </li>
-            <li className="bg-gray-100 rounded-md p-4">
-              <h3 className="text-lg font-bold">DevOps</h3>
-              <p className="text-gray-600">Docker, Kubernetes, AWS, Azure, GCP, CI/CD</p>
-            </li>
-          </ul>
-        </div> */}
       </section>
         <section className="bg-gray-100 py-12 px-4 md:px-8" id="skills">
-          <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Skills</h2>
+          <div className="space-y-4 container mx-auto text-center">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Compétences</h2>
             <p className="max-w-[700px] mx-auto text-gray-500 md:text-xl">
-                Explore my diverse work experience as a web developer, from startups to enterprise-level companies.
+                Voici une liste exhaustive des technologies que j'ai appris à maitriser au fur et à mesure des années.
               </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
               <div className="flex flex-col items-center">
                 <CodepenIcon className="w-12 h-12 mb-2" />
                 <p className="text-gray-700">React</p>
               </div>
               <div className="flex flex-col items-center">
                 <CodepenIcon className="w-12 h-12 mb-2" />
-                <p className="text-gray-700">Node.js</p>
+                <p className="text-gray-700">.NET</p>
               </div>
               <div className="flex flex-col items-center">
                 <DatabaseIcon className="w-12 h-12 mb-2" />
-                <p className="text-gray-700">MongoDB</p>
+                <p className="text-gray-700">SQL Server</p>
               </div>
               <div className="flex flex-col items-center">
                 <DatabaseIcon className="w-12 h-12 mb-2" />
-                <p className="text-gray-700">PostgreSQL</p>
+                <p className="text-gray-700">Azure Devops</p>
               </div>
               <div className="flex flex-col items-center">
                 <TypeIcon className="w-12 h-12 mb-2" />
-                <p className="text-gray-700">TypeScript</p>
+                <p className="text-gray-700">Angular</p>
               </div>
               <div className="flex flex-col items-center">
                 <DockIcon className="w-12 h-12 mb-2" />
@@ -148,14 +132,13 @@ export function MainPage() {
                 <p className="text-gray-700">Git</p>
               </div>
             </div>
-          </div>
         </section>
-        <section id="experience" className="w-full py-12 md:py-24 lg:py-32 bg-white">
+        <section id="experiences" className="w-full py-12 bg-white">
           <div className="container px-4 md:px-6 mx-auto">
             <div className="space-y-4 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">My Professional Journey</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Expériences professionelles</h2>
               <p className="max-w-[700px] mx-auto text-gray-500 md:text-xl">
-                Explore my diverse work experience as a web developer, from startups to enterprise-level companies.
+                Voici un résumé exhaustif de mes dernières expériences. Vous pouvez trouver un détail complet ici : 
               </p>
             </div>
             <div className="mt-12 relative">
@@ -163,55 +146,94 @@ export function MainPage() {
               <div className="grid gap-8">
                 <div className="grid md:grid-cols-2 gap-4 relative">
                   <div className="bg-gray-100  rounded-lg p-6 space-y-2 md:ml-12">
-                    <h3 className="text-xl font-bold">Web Developer</h3>
-                    <p className="text-gray-500">Acme Inc.</p>
-                    <p className="text-gray-600">2020 - Present</p>
+                    <h3 className="text-xl font-bold">Ingénieur Développeur Full-Stack</h3>
+                    <p className="text-gray-500">Infotel Blagnac</p>
+                    <p className="text-gray-600">2023 - Maintenant</p>
                     <p className="text-gray-500">
-                      Developed and maintained complex web applications using modern technologies like React, Node.js,
-                      and GraphQL. Collaborated with cross-functional teams to deliver high-quality, user-centric
-                      solutions.
+                      • <span className="font-bold">ASN/AOG</span> : Maintenance / développement d'une nouvelle section permettant le suivi d'incidents + un système d'abonnement pour filtrer les informations montrées.<br />
+                      • <span className="font-bold">Airframe Services</span> : Création d'une application permettant un suivi grâce à la mise en place de KPI.<br />
+                      • <span className="font-bold">Madness</span> : Etude d'un projet pour la rédaction d'une documentation et de spec projets.<br />
+                      • <span className="font-bold">Athenaa</span> : Création d'un back retournant les moyennes d'heures / cycles de vol selon un algorithme spécifié par le client.<br />
                     </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
+                        React
+                      </span>
+                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
+                        Angular
+                      </span>
+                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
+                        .NET
+                      </span>
+                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
+                        Git
+                      </span>
+                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
+                        JIRA
+                      </span>
+                    </div>
                   </div>
                   <div className="absolute -left-6 md:left-1/2 md:-translate-x-1/2 bg-blue-400 rounded-full w-6 h-6 flex items-center justify-center">
                   </div>
                 </div>
                 <div className="grid md:grid-cols-2 gap-4 relative">
                   <div className="bg-gray-100 rounded-lg p-6 space-y-2 md:mr-12 md:col-start-2">
-                    <h3 className="text-xl font-bold">Frontend Engineer</h3>
-                    <p className="text-gray-500">Oceanic Startup</p>
-                    <p className="text-gray-600">2018 - 2020</p>
+                    <h3 className="text-xl font-bold">Ingénieur Développeur Full-Stack</h3>
+                    <p className="text-gray-500">LP Promotion</p>
+                    <p className="text-gray-600">2021 - 2023</p>
                     <p className="text-gray-500">
-                      Designed and implemented responsive user interfaces for a cutting-edge marine technology platform.
-                      Optimized performance and accessibility, contributing to the company's growth and success.
+                      •  <span className="font-bold">Workplace</span> : Mise en place d'un outil regroupant les process métiers, le langage technique et un organigramme. <br />
+                      •  <span className="font-bold">ADV</span> : Transformation du module de gestion des étapes d'un dossier en application Web. <br />
+                      •  <span className="font-bold">LP.Comm</span> : Maintenance de l'application monolithique. <br />
                     </p>
+                    <div className="flex flex-wrap gap-2">
+                    <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
+                        .NET
+                      </span>
+                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
+                        Blazor
+                      </span>
+                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
+                        SQL Server
+                      </span>
+                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
+                        Git
+                      </span>
+                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
+                        Azure AD
+                      </span>
+                      </div>
                   </div>
                   <div className="absolute -left-6 md:left-1/2 md:-translate-x-1/2 bg-blue-400 rounded-full w-6 h-6 flex items-center justify-center">
                   </div>
                 </div>
                 <div className="grid md:grid-cols-2 gap-4 relative">
                   <div className="bg-gray-100 rounded-lg p-6 space-y-2 md:ml-12">
-                    <h3 className="text-xl font-bold">Web Intern</h3>
-                    <p className="text-gray-500">Space Exploration Inc.</p>
-                    <p className="text-gray-600">2017 - 2018</p>
+                    <h3 className="text-xl font-bold">Alternant Chef de projet/ Ingénieur logiciel</h3>
+                    <p className="text-gray-500">LP Promotion</p>
+                    <p className="text-gray-600">2019 - 2021</p>
                     <p className="text-gray-500">
-                      Gained valuable experience in building and maintaining web applications for a leading space
-                      technology company. Contributed to the development of interactive data visualizations and
-                      educational resources.
+                      •  <span className="font-bold">FluxPartenaire</span> : Nouvelle version d'une application de génération de flux partenaires au format XML. <br />
+                      •  <span className="font-bold">LP Inside</span> : Transformation d'une application monolithique comportant un grand nombre de module en plateforme web. <br />
+                      •  <span className="font-bold">UI.Framework</span> : Création d'une bibliothèque de composants utilisés sur les autres projets en cours et à venir. <br />
                     </p>
-                  </div>
-                  <div className="absolute -left-6 md:left-1/2 md:-translate-x-1/2 bg-blue-400 rounded-full w-6 h-6 flex items-center justify-center">
-                  </div>
-                </div>
-                <div className="grid md:grid-cols-2 gap-4 relative">
-                  <div className="bg-gray-100 rounded-lg p-6 space-y-2 md:mr-12 md:col-start-2">
-                    <h3 className="text-xl font-bold">Web Developer Intern</h3>
-                    <p className="text-gray-500">Aquatic Solutions</p>
-                    <p className="text-gray-600">2016 - 2017</p>
-                    <p className="text-gray-500">
-                      Participated in the development of a web-based platform for marine research and conservation.
-                      Gained experience in working with various web technologies and collaborating with a
-                      multidisciplinary team.
-                    </p>
+                    <div className="flex flex-wrap gap-2">
+                    <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
+                        .NET
+                      </span>
+                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
+                        Blazor
+                      </span>
+                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
+                        SQL Server
+                      </span>
+                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
+                        Git
+                      </span>
+                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
+                        Azure AD
+                      </span>
+                      </div>
                   </div>
                   <div className="absolute -left-6 md:left-1/2 md:-translate-x-1/2 bg-blue-400 rounded-full w-6 h-6 flex items-center justify-center">
                   </div>
@@ -221,83 +243,45 @@ export function MainPage() {
           </div>
         </section>
         <section className="bg-gray-100 py-12 px-4 md:px-8" id="projects">
-          <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Projects</h2>
-            <p className="max-w-[700px] mx-auto text-gray-500 md:text-xl">
-                Explore my diverse work experience as a web developer, from startups to enterprise-level companies.
+          <div className="space-y-4 container mx-auto text-center">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Projets personnels</h2>
+            <p className="max-w-[700px] mx-auto text-gray-500 md:text-xl py-1">
+                Voici une liste de mes projets personnels
               </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
               <Card>
-                <img
-                  alt="Project 1"
-                  className="rounded-t-lg"
-                  height={300}
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "400/300",
-                    objectFit: "cover",
-                  }}
-                  width={400}
+                <div
+                  className="rounded-t-lg cv-site-cover"
                 />
                 <CardContent className="p-4">
-                  <h3 className="text-xl font-bold mb-2">Project 1</h3>
+                  <h3 className="text-xl font-bold mb-2">Mon site web</h3>
                   <p className="text-gray-700">
-                    A full-stack web application built with React, Node.js, and MongoDB. Includes features like user
-                    authentication, real-time chat, and data visualization.
+                    Ce site a été réalisé en utilisant <a href="https://nextjs.org/">NextJS</a>, framework de <a href="https://fr.legacy.reactjs.org/">React</a>.
                   </p>
                 </CardContent>
               </Card>
               <Card>
-                <img
-                  alt="Project 2"
+                <div
                   className="rounded-t-lg"
-                  height={300}
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "400/300",
-                    objectFit: "cover",
-                  }}
-                  width={400}
                 />
                 <CardContent className="p-4">
-                  <h3 className="text-xl font-bold mb-2">Project 2</h3>
+                  <h3 className="text-xl font-bold mb-2">(WIP)Tom Archer Website</h3>
                   <p className="text-gray-700">
-                    A responsive e-commerce website built with Next.js, TypeScript, and PostgreSQL. Includes features
-                    like product listings, shopping cart, and order management.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <img
-                  alt="Project 3"
-                  className="rounded-t-lg"
-                  height={300}
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "400/300",
-                    objectFit: "cover",
-                  }}
-                  width={400}
-                />
-                <CardContent className="p-4">
-                  <h3 className="text-xl font-bold mb-2">Project 3</h3>
-                  <p className="text-gray-700">
-                    A mobile-first web application built with React Native, Node.js, and MongoDB. Includes features like
-                    location-based services, push notifications, and offline support.
+                    Ce site, pour mon projet musical, est en train d'être réalisé grâce à <a href="https://nextjs.org/">NextJS</a>, framework de <a href="https://fr.legacy.reactjs.org/">React</a>.
                   </p>
                 </CardContent>
               </Card>
             </div>
-          </div>
         </section>
         <section className="py-12 px-4 md:px-8" id="contact">
-          <div className="container mx-auto text-center">
+          <div className="space-y-4 container mx-auto text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Contact</h2>
             <p className="max-w-[700px] mx-auto text-gray-500 md:text-xl">
-                Explore my diverse work experience as a web developer, from startups to enterprise-level companies.
+                N'hésitez pas à me contacter pour toute demande, offre...
               </p>
-            <Contact></Contact>
           </div>
+          <Contact></Contact>
         </section>
       </main>
       <footer className="bg-gray-900 text-white py-4 px-4 md:px-8">

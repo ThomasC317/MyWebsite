@@ -21,14 +21,14 @@ import { CardContent, Card } from "@/components/ui/card"
 
 export function Contact() {
   return (
-    <section className="py-12 md:py-24 lg:py-32">
+    <div className="mt-12">
       <div className="container grid grid-cols-1 gap-6 px-4 md:grid-cols-3 md:px-6">
         <Card>
           <CardContent className="flex items-center gap-4">
             <div className="contact-body">
             <PhoneIcon className="h-8 w-8 text-gray-500 dark:text-gray-400" />
             <div className="contact-card-body">
-              <div className="text-xl font-semibold">Phone</div>
+              <div className="text-xl font-semibold">Mon Numéro</div>
               <p className="text-gray-500 dark:text-gray-400">07.82.41.18.35</p>
             </div>
             </div>
@@ -39,7 +39,7 @@ export function Contact() {
           <div className="contact-body">
             <MailOpenIcon className="h-8 w-8 text-gray-500 dark:text-gray-400" />
             <div className="contact-card-body">
-              <div className="text-xl font-semibold">Email</div>
+              <div className="text-xl font-semibold">Mon Email</div>
               <p className="text-gray-500 dark:text-gray-400">
                 <a href="#">thomas.cerdera@gmail.com</a>
               </p>
@@ -52,15 +52,14 @@ export function Contact() {
           <div className="contact-body">
             <MapPinIcon className="h-8 w-8 text-gray-500 dark:text-gray-400" />
             <div className="contact-card-body">
-              <div className="text-xl font-semibold">Location</div>
+              <div className="text-xl font-semibold">Je vis à </div>
               <p className="text-gray-500 dark:text-gray-400">Toulouse</p>
             </div>
             </div>
           </CardContent>
         </Card>
       </div>
-
-    </section>
+    </div>
   )
 }
 
