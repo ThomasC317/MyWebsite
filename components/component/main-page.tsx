@@ -69,16 +69,16 @@ export function MainPage() {
       <main className="flex-1">
         <section className="test">
           <div className="full-screen-background">
-        <div className="container mx-auto flex flex-col items-center md:flex-row md:justify-between  ">
+        <div className="container mx-auto flex flex-col items-center md:flex-row md:justify-between">
           <div className="flex flex-col items-center md:items-start px-8">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl main-title">Bonjour, je m'appelle Thomas CERDERA</h1>
-            <p className="text-white main-title mt-6">Je suis un développeur Full-Stack !</p>
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl main-title fade-right">Bonjour, je m'appelle Thomas CERDERA</h1>
+            <p className="text-white main-title mt-6 fade-right">Je suis un développeur Full-Stack !</p>
           </div>
         </div>
         </div>
         </section>
         <section className="grid grid-cols-2 gap-8 px-8 py-12 h-[500px] mx-auto" id="about">
-        <div className="mx-auto">
+        <div className="mx-auto fade-right">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">A propos de moi</h2>
           <p className="text-gray-600 mt-12">
             Je suis un développeur Full-Stack qui travaille maintenant depuis 5 ans dans le domaine du Web. <br />
