@@ -36,12 +36,10 @@ import React, { useRef, RefObject }  from 'react';
 
 export function MainPage() {
   const { scrollYProgress } = useScroll();
-  const ref = useRef<HTMLDivElement>(null);
-
 
   return (
     <div className="flex flex-col min-h-screen">
-      <nav className="header" ref={ref}>
+      <nav className="header">
         <div className="container mx-auto flex flex-col items-end pr-6">
             <ul className="flex space-x-4">
               <li>
@@ -72,7 +70,7 @@ export function MainPage() {
             </ul>
 
         </div>
-        <motion.div className="progress-bar" style={{ scaleX: scrollYProgress, top: ref.current?.offsetHeight  }} /> 
+        <motion.div className="progress-bar" style={{ scaleX: scrollYProgress }} /> 
       </nav>
 
       <main className="flex-1">
