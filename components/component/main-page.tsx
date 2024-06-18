@@ -288,14 +288,11 @@ export function MainPage() {
         <div className="container mx-auto flex justify-between items-center">
           <p>© 2024 Thomas CERDERA. All rights reserved.</p>
           <div className="flex space-x-4">
-            <Link className="hover:text-gray-400" href="#">
+            <Link className="hover:text-gray-400" href="https://github.com/ThomasC317">
               <GithubIcon className="w-6 h-6" />
             </Link>
-            <Link className="hover:text-gray-400" href="#">
+            <Link className="hover:text-gray-400" href="https://www.linkedin.com/in/thomas-cerdera-305ab3153/">
               <LinkedinIcon className="w-6 h-6" />
-            </Link>
-            <Link className="hover:text-gray-400" href="#">
-              <TwitterIcon className="w-6 h-6" />
             </Link>
           </div>
         </div>
