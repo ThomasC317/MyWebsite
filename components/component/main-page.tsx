@@ -68,7 +68,6 @@ export function MainPage() {
                 </Link>
               </li>
             </ul>
-
         </div>
         <motion.div className="progress-bar" style={{ scaleX: scrollYProgress }} /> 
       </nav>
@@ -77,15 +76,18 @@ export function MainPage() {
         <section className="test">
           <div className="full-screen-background">
         <div className="container mx-auto flex flex-col items-center md:flex-row md:justify-between">
-          <div className="flex flex-col items-center md:items-start px-8">
+          <div className="flex flex-col items-center md:items-start px-8 ">
+          <motion.div whileInView={{ x:0,opacity:1 }} viewport={{ once: true }} transition={{ ease: "easeOut", duration: 1 }} initial={{x:100, opacity:0}}>
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl main-title">Bonjour, je m'appelle Thomas CERDERA</h1>
             <p className="text-white main-title mt-6">Je suis un développeur Full-Stack !</p>
+            </motion.div>
           </div>
         </div>
         </div>
         </section>
         <section className="grid grid-cols-2 gap-8 px-8 py-12 h-[500px] mx-auto" id="about">
         <div className="mx-auto">
+        <motion.div whileInView={{ x:0,opacity:1 }} viewport={{ once: true }} transition={{ ease: "easeOut", duration: 1 }} initial={{x:100, opacity:0}}>
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">A propos de moi</h2>
           <p className="text-gray-600 mt-12">
             Je suis un développeur Full-Stack qui travaille maintenant depuis 5 ans dans le domaine du Web. <br />
@@ -96,6 +98,7 @@ export function MainPage() {
             Fort de mes expériences, je saurais devenir un atout pour votre équipe.
 
           </p>
+          </motion.div>
         </div>
       </section>
         <section className="bg-gray-100 py-12 px-4 md:px-8" id="skills">
@@ -152,6 +155,7 @@ export function MainPage() {
               <div className="absolute inset-0 w-px bg-gray-300 ml-6 md:ml-0 md:left-1/2 md:-translate-x-1/2" />
               <div className="grid gap-8">
                 <div className="grid md:grid-cols-2 gap-4 relative">
+                <motion.div whileInView={{ x:0,opacity:1 }} viewport={{ once: true }} transition={{ ease: "easeOut", duration: 1 }} initial={{x:100, opacity:0}}>
                   <div className="bg-gray-100  rounded-lg p-6 space-y-2 md:ml-12">
                     <h3 className="text-xl font-bold">Ingénieur Développeur Full-Stack</h3>
                     <p className="text-gray-500">Infotel Blagnac</p>
@@ -180,10 +184,12 @@ export function MainPage() {
                       </span>
                     </div>
                   </div>
+                  </motion.div>
                   <div className="absolute -left-6 md:left-1/2 md:-translate-x-1/2 bg-blue-400 rounded-full w-6 h-6 flex items-center justify-center">
                   </div>
                 </div>
                 <div className="grid md:grid-cols-2 gap-4 relative">
+                <motion.div whileInView={{ x:745,opacity:1 }} viewport={{ once: true }} transition={{ ease: "easeOut", duration: 1 }} initial={{x:645, opacity:0}}>
                   <div className="bg-gray-100 rounded-lg p-6 space-y-2 md:mr-12 md:col-start-2">
                     <h3 className="text-xl font-bold">Ingénieur Développeur Full-Stack</h3>
                     <p className="text-gray-500">LP Promotion</p>
@@ -211,10 +217,12 @@ export function MainPage() {
                       </span>
                       </div>
                   </div>
+                  </motion.div>
                   <div className="absolute -left-6 md:left-1/2 md:-translate-x-1/2 bg-blue-400 rounded-full w-6 h-6 flex items-center justify-center">
                   </div>
                 </div>
                 <div className="grid md:grid-cols-2 gap-4 relative">
+                <motion.div whileInView={{ x:0,opacity:1 }} viewport={{ once: true }} transition={{ ease: "easeOut", duration: 1 }} initial={{x:100, opacity:0}}>
                   <div className="bg-gray-100 rounded-lg p-6 space-y-2 md:ml-12">
                     <h3 className="text-xl font-bold">Alternant Chef de projet/ Ingénieur logiciel</h3>
                     <p className="text-gray-500">LP Promotion</p>
@@ -242,6 +250,7 @@ export function MainPage() {
                       </span>
                       </div>
                   </div>
+                  </motion.div>
                   <div className="absolute -left-6 md:left-1/2 md:-translate-x-1/2 bg-blue-400 rounded-full w-6 h-6 flex items-center justify-center">
                   </div>
                 </div>
