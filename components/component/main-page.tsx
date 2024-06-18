@@ -23,6 +23,7 @@ To read more about using these font, please visit the Next.js documentation:
 - App Directory: https://nextjs.org/docs/app/building-your-application/optimizing/fonts
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 **/
+"use client"
 import Link from "next/link"
 import { CardContent, Card } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
@@ -30,11 +31,17 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Contact } from "./contact"
+import { motion, useScroll } from "framer-motion"
+import React, { useRef, RefObject }  from 'react';
 
 export function MainPage() {
+  const { scrollYProgress } = useScroll();
+  const ref = useRef<HTMLDivElement>(null);
+
+
   return (
     <div className="flex flex-col min-h-screen">
-      <nav className="header">
+      <nav className="header" ref={ref}>
         <div className="container mx-auto flex flex-col items-end pr-6">
             <ul className="flex space-x-4">
               <li>
@@ -65,20 +72,22 @@ export function MainPage() {
             </ul>
 
         </div>
+        <motion.div className="progress-bar" style={{ scaleX: scrollYProgress, top: ref.current?.offsetHeight  }} /> 
       </nav>
+
       <main className="flex-1">
         <section className="test">
           <div className="full-screen-background">
         <div className="container mx-auto flex flex-col items-center md:flex-row md:justify-between">
           <div className="flex flex-col items-center md:items-start px-8">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl main-title fade-right">Bonjour, je m'appelle Thomas CERDERA</h1>
-            <p className="text-white main-title mt-6 fade-right">Je suis un développeur Full-Stack !</p>
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl main-title">Bonjour, je m'appelle Thomas CERDERA</h1>
+            <p className="text-white main-title mt-6">Je suis un développeur Full-Stack !</p>
           </div>
         </div>
         </div>
         </section>
         <section className="grid grid-cols-2 gap-8 px-8 py-12 h-[500px] mx-auto" id="about">
-        <div className="mx-auto fade-right">
+        <div className="mx-auto">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">A propos de moi</h2>
           <p className="text-gray-600 mt-12">
             Je suis un développeur Full-Stack qui travaille maintenant depuis 5 ans dans le domaine du Web. <br />
