@@ -77,7 +77,7 @@ export function MainPage() {
           <div className="full-screen-background">
         <div className="container mx-auto flex flex-col items-center md:flex-row md:justify-between">
           <div className="flex flex-col items-center md:items-start px-8 ">
-          <motion.div whileInView={{ x:0,opacity:1 }} viewport={{ once: true }} transition={{ ease: "easeOut", duration: 1 }} initial={{x:100, opacity:0}}>
+          <motion.div whileInView={{ x:0,opacity:1 }} viewport={{ once: true }} transition={{ ease: "easeOut", duration: 1 }} initial={{x:50, opacity:0}}>
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl main-title">Bonjour, je m'appelle Thomas CERDERA</h1>
             <p className="text-white main-title mt-6">Je suis un développeur Full-Stack !</p>
             </motion.div>
@@ -189,7 +189,7 @@ export function MainPage() {
                   </div>
                 </div>
                 <div className="grid md:grid-cols-2 gap-4 relative">
-                <motion.div whileInView={{ x:745,opacity:1 }} viewport={{ once: true }} transition={{ ease: "easeOut", duration: 1 }} initial={{x:645, opacity:0}}>
+                <motion.div whileInView={{ x:755,opacity:1 }} viewport={{ once: true }} transition={{ ease: "easeOut", duration: 1 }} initial={{x:655, opacity:0}}>
                   <div className="bg-gray-100 rounded-lg p-6 space-y-2 md:mr-12 md:col-start-2">
                     <h3 className="text-xl font-bold">Ingénieur Développeur Full-Stack</h3>
                     <p className="text-gray-500">LP Promotion</p>
@@ -279,7 +279,7 @@ export function MainPage() {
               </Card>
               <Card>
                 <div
-                  className="rounded-t-lg"
+                  className="rounded-t-lg tom-archer-cover"
                 />
                 <CardContent className="p-4">
                   <h3 className="text-xl font-bold mb-2">(WIP)Tom Archer Website</h3>
