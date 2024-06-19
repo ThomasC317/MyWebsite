@@ -61,17 +61,15 @@
 }
 
 .cv-site-cover {
-  background-image: url('/nextjs-github-pages/header.png');
+  background-image: url('header.png');
   aspect-ratio: 400 / 300;
   object-fit: cover;
-
 }
 
 .tom-archer-cover {
-  background-image: url('/nextjs-github-pages/tomarcher.png');
+  background-image: url('tomarcher.png');
   aspect-ratio: 400 / 300;
   object-fit: cover;
-  
 }
 
 a {
