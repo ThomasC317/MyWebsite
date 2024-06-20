@@ -3,45 +3,73 @@ import Link from "next/link"
 import { CardContent, Card } from "@/components/ui/card"
 import { Contact } from "./contact"
 import { motion, useScroll } from "framer-motion"
+import React, { useState } from 'react';
 
 export function MainPage() {
   const { scrollYProgress } = useScroll();
+  const [showMenu, setShowMenu] = useState(false);
 
   return (
     <div className="flex flex-col min-h-screen">
-      <nav className="header">
-        <div className="container mx-auto flex flex-col items-end pr-6">
-            <ul className="flex space-x-4">
-              <li>
-                <Link className="hover:text-gray-400 text-white" href="#about">
-                  À propos
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:text-gray-400 text-white" href="#skills">
-                  Compétences
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:text-gray-400 text-white" href="#experiences">
-                  Expériences
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:text-gray-400 text-white" href="#projects">
-                  Projets persos
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:text-gray-400 text-white" href="#contact">
-                  Me contacter
-                </Link>
-              </li>
-            </ul>
-        </div>
-        <motion.div className="progress-bar" style={{ scaleX: scrollYProgress }} /> 
-      </nav>
-
+  <nav className="header">
+  <div className="container mx-auto flex flex-col md:flex-row items-center md:items-end justify-between pr-6">
+    <div className="flex justify-between w-full md:w-auto">
+      <div className="md:hidden">
+        <button
+          className="text-white focus:outline-none"
+          onClick={() => setShowMenu(!showMenu)}
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <ul
+      className={`${
+        showMenu ? "block" : "hidden"
+      } md:flex space-x-4 mt-4 md:mt-0`}
+    >
+      <li>
+        <Link className="hover:text-gray-400 text-white" href="#about">
+          À propos
+        </Link>
+      </li>
+      <li>
+        <Link className="hover:text-gray-400 text-white" href="#skills">
+          Compétences
+        </Link>
+      </li>
+      <li>
+        <Link className="hover:text-gray-400 text-white" href="#experiences">
+          Expériences
+        </Link>
+      </li>
+      <li>
+        <Link className="hover:text-gray-400 text-white" href="#projects">
+          Projets persos
+        </Link>
+      </li>
+      <li>
+        <Link className="hover:text-gray-400 text-white" href="#contact">
+          Me contacter
+        </Link>
+      </li>
+    </ul>
+  </div>
+  <motion.div className="progress-bar" style={{ scaleX: scrollYProgress }} />
+</nav>
       <main className="flex-1">
         <section className="test">
           <div className="full-screen-background">
@@ -55,22 +83,26 @@ export function MainPage() {
         </div>
         </div>
         </section>
-        <section className="grid grid-cols-2 gap-8 px-8 py-12 h-[500px] mx-auto" id="about">
-        <div className="mx-auto">
-        <motion.div whileInView={{ x:0,opacity:1 }} viewport={{ once: true }} transition={{ ease: "easeOut", duration: 1 }} initial={{x:100, opacity:0}}>
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">A propos de moi</h2>
-          <p className="text-gray-600 mt-12">
-            Je suis un développeur Full-Stack qui travaille maintenant depuis 5 ans dans le domaine du Web. <br />
-            En dehors du développement, j'adore la musique, le cinéma, les séries, les jeux-vidéos, les voyages, et la photographie...<br /><br />
-            Comme vous pouvez le voir, je suis quelqu'un de très créatif. J'ai de plus une bonne maîtrise de l'anglais (920 au toeic), j'apprécie particulièrement 
-            le travail en équipe mais je sais aussi travailler en autonomie quand il le faut. Je suis minutieux, je sais gérer mon stress, 
-            et j'ai beaucoup travaillé mon esprit critique.<br /><br />
-            Fort de mes expériences, je saurais devenir un atout pour votre équipe.
-
-          </p>
-          </motion.div>
-        </div>
-      </section>
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 px-8 py-12 h-auto mx-auto" id="about">
+  <div className="mx-auto">
+    <motion.div
+      whileInView={{ x: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ ease: "easeOut", duration: 1 }}
+      initial={{ x: 100, opacity: 0 }}
+    >
+      <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">A propos de moi</h2>
+      <p className="text-gray-600 mt-12">
+        Je suis un développeur Full-Stack qui travaille maintenant depuis 5 ans dans le domaine du Web. <br />
+        En dehors du développement, j'adore la musique, le cinéma, les séries, les jeux-vidéos, les voyages, et la photographie...<br /><br />
+        Comme vous pouvez le voir, je suis quelqu'un de très créatif. J'ai de plus une bonne maîtrise de l'anglais (920 au toeic), j'apprécie particulièrement 
+        le travail en équipe mais je sais aussi travailler en autonomie quand il le faut. Je suis minutieux, je sais gérer mon stress, 
+        et j'ai beaucoup travaillé mon esprit critique.<br /><br />
+        Fort de mes expériences, je saurais devenir un atout pour votre équipe.
+      </p>
+    </motion.div>
+  </div>
+</section>
         <section className="bg-gray-100 py-12 px-4 md:px-8" id="skills">
           <div className="space-y-4 container mx-auto text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Compétences</h2>
@@ -114,120 +146,98 @@ export function MainPage() {
             </div>
         </section>
         <section id="experiences" className="w-full py-12 bg-white">
-          <div className="container px-4 md:px-6 mx-auto">
-            <div className="space-y-4 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Expériences professionelles</h2>
-              <p className="max-w-[700px] mx-auto text-gray-500 md:text-xl">
-                Voici un résumé exhaustif de mes dernières expériences. Vous pouvez trouver un détail complet ici : 
+  <div className="container px-4 md:px-6 mx-auto">
+    <div className="space-y-4 text-center">
+      <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Expériences professionelles</h2>
+      <p className="max-w-[700px] mx-auto text-gray-500 md:text-xl">
+        Voici un résumé exhaustif de mes dernières expériences. Vous pouvez trouver un détail complet ici :
+      </p>
+    </div>
+    <div className="mt-12 relative">
+      <div className="hidden md:block absolute inset-0 w-px bg-gray-300 ml-6 md:ml-0 md:left-1/2 md:-translate-x-1/2" />
+      <div className="grid gap-8">
+        <div className="grid md:grid-cols-2 gap-4 relative">
+          <motion.div
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ ease: "easeOut", duration: 1 }}
+            initial={{ x: 100, opacity: 0 }}
+          >
+            <div className="bg-gray-100 rounded-lg p-6 space-y-2 md:ml-12">
+              <h3 className="text-xl font-bold">Ingénieur Développeur Full-Stack</h3>
+              <p className="text-gray-500">Infotel Blagnac</p>
+              <p className="text-gray-600">Septembre 2023 - Maintenant</p>
+              <p className="text-gray-500">
+                • <span className="font-bold">ASN/AOG</span> : Maintenance / développement d'une nouvelle section permettant le suivi d'incidents + un système d'abonnement permettant de filtrer la quantité d'informations affichées à l'utilisateur.<br />
+                • <span className="font-bold">Airframe Services</span> : Création d'une application permettant un suivi grâce à la mise en place de KPI.<br />
+                • <span className="font-bold">Madness</span> : Etude d'un projet pour la rédaction d'une documentation et de spec projets.<br />
+                • <span className="font-bold">Athenaa</span> : Création d'un back retournant les moyennes d'heures / cycles de vol selon un algorithme spécifié par le client.<br />
               </p>
-            </div>
-            <div className="mt-12 relative">
-              <div className="absolute inset-0 w-px bg-gray-300 ml-6 md:ml-0 md:left-1/2 md:-translate-x-1/2" />
-              <div className="grid gap-8">
-                <div className="grid md:grid-cols-2 gap-4 relative">
-                <motion.div whileInView={{ x:0,opacity:1 }} viewport={{ once: true }} transition={{ ease: "easeOut", duration: 1 }} initial={{x:100, opacity:0}}>
-                  <div className="bg-gray-100  rounded-lg p-6 space-y-2 md:ml-12">
-                    <h3 className="text-xl font-bold">Ingénieur Développeur Full-Stack</h3>
-                    <p className="text-gray-500">Infotel Blagnac</p>
-                    <p className="text-gray-600">2023 - Maintenant</p>
-                    <p className="text-gray-500">
-                      • <span className="font-bold">ASN/AOG</span> : Maintenance / développement d'une nouvelle section permettant le suivi d'incidents + un système d'abonnement pour filtrer les informations montrées.<br />
-                      • <span className="font-bold">Airframe Services</span> : Création d'une application permettant un suivi grâce à la mise en place de KPI.<br />
-                      • <span className="font-bold">Madness</span> : Etude d'un projet pour la rédaction d'une documentation et de spec projets.<br />
-                      • <span className="font-bold">Athenaa</span> : Création d'un back retournant les moyennes d'heures / cycles de vol selon un algorithme spécifié par le client.<br />
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
-                        React
-                      </span>
-                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
-                        Angular
-                      </span>
-                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
-                        .NET
-                      </span>
-                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
-                        Git
-                      </span>
-                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
-                        JIRA
-                      </span>
-                    </div>
-                  </div>
-                  </motion.div>
-                  <div className="absolute -left-6 md:left-1/2 md:-translate-x-1/2 bg-blue-400 rounded-full w-6 h-6 flex items-center justify-center">
-                  </div>
-                </div>
-                <div className="grid md:grid-cols-2 gap-4 relative">
-                <motion.div whileInView={{ x:755,opacity:1 }} viewport={{ once: true }} transition={{ ease: "easeOut", duration: 1 }} initial={{x:655, opacity:0}}>
-                  <div className="bg-gray-100 rounded-lg p-6 space-y-2 md:mr-12 md:col-start-2">
-                    <h3 className="text-xl font-bold">Ingénieur Développeur Full-Stack</h3>
-                    <p className="text-gray-500">LP Promotion</p>
-                    <p className="text-gray-600">2021 - 2023</p>
-                    <p className="text-gray-500">
-                      •  <span className="font-bold">Workplace</span> : Mise en place d'un outil regroupant les process métiers, le langage technique et un organigramme. <br />
-                      •  <span className="font-bold">ADV</span> : Transformation du module de gestion des étapes d'un dossier en application Web. <br />
-                      •  <span className="font-bold">LP.Comm</span> : Maintenance de l'application monolithique. <br />
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                    <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
-                        .NET
-                      </span>
-                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
-                        Blazor
-                      </span>
-                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
-                        SQL Server
-                      </span>
-                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
-                        Git
-                      </span>
-                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
-                        Azure AD
-                      </span>
-                      </div>
-                  </div>
-                  </motion.div>
-                  <div className="absolute -left-6 md:left-1/2 md:-translate-x-1/2 bg-blue-400 rounded-full w-6 h-6 flex items-center justify-center">
-                  </div>
-                </div>
-                <div className="grid md:grid-cols-2 gap-4 relative">
-                <motion.div whileInView={{ x:0,opacity:1 }} viewport={{ once: true }} transition={{ ease: "easeOut", duration: 1 }} initial={{x:100, opacity:0}}>
-                  <div className="bg-gray-100 rounded-lg p-6 space-y-2 md:ml-12">
-                    <h3 className="text-xl font-bold">Alternant Chef de projet/ Ingénieur logiciel</h3>
-                    <p className="text-gray-500">LP Promotion</p>
-                    <p className="text-gray-600">2019 - 2021</p>
-                    <p className="text-gray-500">
-                      •  <span className="font-bold">FluxPartenaire</span> : Nouvelle version d'une application de génération de flux partenaires au format XML. <br />
-                      •  <span className="font-bold">LP Inside</span> : Transformation d'une application monolithique comportant un grand nombre de module en plateforme web. <br />
-                      •  <span className="font-bold">UI.Framework</span> : Création d'une bibliothèque de composants utilisés sur les autres projets en cours et à venir. <br />
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                    <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
-                        .NET
-                      </span>
-                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
-                        Blazor
-                      </span>
-                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
-                        SQL Server
-                      </span>
-                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
-                        Git
-                      </span>
-                      <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200">
-                        Azure AD
-                      </span>
-                      </div>
-                  </div>
-                  </motion.div>
-                  <div className="absolute -left-6 md:left-1/2 md:-translate-x-1/2 bg-blue-400 rounded-full w-6 h-6 flex items-center justify-center">
-                  </div>
-                </div>
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-gray-700 px-3 py-1 rounded-lg text-xs font-medium text-gray-200">React</span>
+                <span className="bg-gray-700 px-3 py-1 rounded-lg text-xs font-medium text-gray-200">Angular</span>
+                <span className="bg-gray-700 px-3 py-1 rounded-lg text-xs font-medium text-gray-200">.NET</span>
+                <span className="bg-gray-700 px-3 py-1 rounded-lg text-xs font-medium text-gray-200">Pyspark</span>
+                <span className="bg-gray-700 px-3 py-1 rounded-lg text-xs font-medium text-gray-200">Git</span>
+                <span className="bg-gray-700 px-3 py-1 rounded-lg text-xs font-medium text-gray-200">JIRA</span>
               </div>
             </div>
-          </div>
-        </section>
+          </motion.div>
+          <div className="hidden md:flex absolute -left-6 md:left-1/2 md:-translate-x-1/2 bg-blue-400 rounded-full w-6 h-6 items-center justify-center"></div>
+        </div>
+        <div className="grid md:grid-cols-2 gap-4 relative">
+        <motion.div whileInView={{ x:710,opacity:1 }} viewport={{ once: true }} transition={{ ease: "easeOut", duration: 1 }} initial={{x:610, opacity:0}}>
+            <div className="bg-gray-100 rounded-lg p-6 space-y-2 md:ml-12 md:col-start-1">
+              <h3 className="text-xl font-bold">Ingénieur Développeur Full-Stack</h3>
+              <p className="text-gray-500">LP Promotion</p>
+              <p className="text-gray-600">Août 2021 - Mai 2023</p>
+              <p className="text-gray-500">
+                • <span className="font-bold">Workplace</span> : Mise en place d'un outil regroupant les process métiers, le langage technique et un organigramme.<br />
+                • <span className="font-bold">ADV</span> : Transformation du module de gestion des étapes d'un dossier en application Web.<br />
+                • <span className="font-bold">LP.Comm</span> : Maintenance de l'application monolithique.<br />
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-gray-700 px-3 py-1 rounded-lg text-xs font-medium text-gray-200">.NET</span>
+                <span className="bg-gray-700 px-3 py-1 rounded-lg text-xs font-medium text-gray-200">Blazor</span>
+                <span className="bg-gray-700 px-3 py-1 rounded-lg text-xs font-medium text-gray-200">SQL Server</span>
+                <span className="bg-gray-700 px-3 py-1 rounded-lg text-xs font-medium text-gray-200">Git</span>
+                <span className="bg-gray-700 px-3 py-1 rounded-lg text-xs font-medium text-gray-200">Azure AD</span>
+              </div>
+            </div>
+          </motion.div>
+          <div className="hidden md:flex absolute -left-6 md:left-1/2 md:-translate-x-1/2 bg-blue-400 rounded-full w-6 h-6 items-center justify-center"></div>
+        </div>
+        <div className="grid md:grid-cols-2 gap-4 relative">
+          <motion.div
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ ease: "easeOut", duration: 1 }}
+            initial={{ x: 100, opacity: 0 }}
+          >
+            <div className="bg-gray-100 rounded-lg p-6 space-y-2 md:ml-12">
+              <h3 className="text-xl font-bold">Alternant Chef de projet/ Ingénieur logiciel</h3>
+              <p className="text-gray-500">LP Promotion</p>
+              <p className="text-gray-600">Octobre 2019 - Juillet 2021</p>
+              <p className="text-gray-500">
+                • <span className="font-bold">FluxPartenaire</span> : Nouvelle version d'une application de génération de flux partenaires au format XML.<br />
+                • <span className="font-bold">LP Inside</span> : Transformation d'une application monolithique comportant un grand nombre de module en plateforme web.<br />
+                • <span className="font-bold">UI.Framework</span> : Création d'une bibliothèque de composants utilisés sur les autres projets en cours et à venir.<br />
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-gray-700 px-3 py-1 rounded-lg text-xs font-medium text-gray-200">.NET</span>
+                <span className="bg-gray-700 px-3 py-1 rounded-lg text-xs font-medium text-gray-200">Blazor</span>
+                <span className="bg-gray-700 px-3 py-1 rounded-lg text-xs font-medium text-gray-200">SQL Server</span>
+                <span className="bg-gray-700 px-3 py-1 rounded-lg text-xs font-medium text-gray-200">Git</span>
+                <span className="bg-gray-700 px-3 py-1 rounded-lg text-xs font-medium text-gray-200">Azure AD</span>
+              </div>
+            </div>
+          </motion.div>
+          <div className="hidden md:flex absolute -left-6 md:left-1/2 md:-translate-x-1/2 bg-blue-400 rounded-full w-6 h-6 items-center justify-center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
         <section className="bg-gray-100 py-12 px-4 md:px-8" id="projects">
           <div className="space-y-4 container mx-auto text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Projets personnels</h2>
