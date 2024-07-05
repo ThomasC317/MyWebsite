@@ -87,7 +87,7 @@ const Contact = ()=> {
           />
         </div>
         <button type="submit" className="submit-button w-full">
-          Send Message
+          Envoi du message
         </button>
       </form>
     </div>

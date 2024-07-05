@@ -35,7 +35,7 @@
   padding: 15px 0px;
   background: rgba(0, 0, 0, 0.3);
   width: 100%;
-  color:white;
+  color: white;
 }
 
 .test {
@@ -64,7 +64,12 @@
   background-image: url('header.png');
   aspect-ratio: 400 / 300;
   object-fit: cover;
+}
 
+.tom-archer-cover {
+  background-image: url('tomarcher.png');
+  aspect-ratio: 400 / 300;
+  object-fit: cover;
 }
 
 a {
