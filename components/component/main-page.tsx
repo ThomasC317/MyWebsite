@@ -30,7 +30,7 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
-import { Contact } from "./contact"
+import Contact from "./contact"
 import { motion, useScroll } from "framer-motion"
 import React, { useRef, RefObject }  from 'react';
 
